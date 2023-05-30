@@ -1,0 +1,37 @@
+조건에 부합하는 중고거래 댓글 조회하기
+SELECT
+TITLE,
+b.BOARD_ID,
+REPLY_ID,
+r.WRITER_ID,
+r.CONTENTS,
+DATE_FORMAT(r.CREATED_DATE, '%Y-%m-%d') as CREATED_DATE
+From USED_GOODS_BOARD b
+inner join USED_GOODS_REPLY r on b.BOARD_ID = r.BOARD_ID
+WHERE MONTH(b.CREATED_DATE) = 10
+ORDER BY r.CREATED_DATE, TITLE
+
+조건에 맞는 도서 리스트 출력하기
+SELECT BOOK_ID,
+DATE_FORMAT(PUBLISHED_DATE, '%Y-%m-%d') as PUBLISHED_DATE
+From BOOK
+Where YEAR(PUBLISHED_DATE) = '2021' and CATEGORY = '인문'
+ORDER BY PUBLISHED_DATE asc
+
+과일로 만든 아이스크림 고르기
+SELECT f.FLAVOR
+from FIRST_HALF f inner join ICECREAM_INFO i on f.FLAVOR = i.FLAVOR
+WHERE TOTAL_ORDER >= 3000 and INGREDIENT_TYPE = 'fruit_based'
+ORDER BY TOTAL_ORDER desc
+
+인기 있는 아이스크림
+SELECT FLAVOR
+from FIRST_HALF
+order by TOTAL_ORDER desc, SHIPMENT_ID asc
+
+흉부외과 또는 일반외과 의사목록 출력하기
+SELECT DR_NAME, DR_ID, MCDP_CD,
+DATE_FORMAT(HIRE_YMD, '%Y-%m-%d')
+from DOCTOR
+where MCDP_CD in ('CS', 'GS')
+order by HIRE_YMD desc, DR_NAME
