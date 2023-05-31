@@ -1,4 +1,7 @@
-# 알고리즘 공부를 위한 저장소
+![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=Algorithm%20Study&fontSize=90)
+# <div align=center> 알고리즘 공부를 위한 저장소 </div>
+
+<img src="https://img.shields.io/badge/IntellJ-000000?style=flat&logo=intellijidea&logoColor=white"/> <img src="https://img.shields.io/badge/Gradle-02303A?style=flat&logo=gradle&logoColor=white"/> 
 
 
 2023 - 05 - 3
