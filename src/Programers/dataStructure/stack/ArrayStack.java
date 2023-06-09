@@ -6,28 +6,28 @@ public class ArrayStack implements ArrayStackInterface {
 
     private int index;
     private int size;
-    private char[] stack;
+    private int[] stack;
 
 
     ArrayStack(int size) {
         index = -1;
         this.size = size;
-        stack = new char[size];
+        stack = new int[size];
     }
 
 
     @Override
-    public void push(char item) {
+    public void push(int item) {
         stack[++index] = item;
     }
 
     @Override
-    public char pop() {
+    public int pop() {
         return stack[index--];
     }
 
     @Override
-    public char peek() {
+    public int peek() {
         return stack[index];
     }
 }
